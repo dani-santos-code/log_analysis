@@ -2,9 +2,20 @@
 This is a Log Analysis project for the Full Stack Web Development Nanodegree @Udacity (https://eu.udacity.com/course/full-stack-web-developer-nanodegree--nd004)
 
 
-## First Steps:
+## Setting up your environment:
 
-Download the file newsdata.zip here: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
+This project makes use of a linux-based virtual machine. To install it, go to Virtual Box's website: https://www.virtualbox.org/wiki/Downloads
+
+We use Vagrant to manage our virtual machine and sync our local repo with the machine's repo. Please install vagrant: https://www.vagrantup.com/downloads.html
+
+Then, fork the following repo:
+https://github.com/udacity/fullstack-nanodegree-vm/tree/master/vagrant
+
+Finally, run `vagrant up` followed by `vagrant ssh`.
+
+Cd into vagrant (`cd /vagrant`). Then clone the current repo at https://github.com/dani-santos-code/log_analysis
+
+Finally, download the file newsdata.zip here: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
 
 Unzip it and move it to your root directory. Then
 load the data on `newsdata.sql` by running

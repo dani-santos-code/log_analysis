@@ -16,7 +16,10 @@ def get_top_three_articles():
     c.execute(query)
     top_three_articles = c.fetchall()
     db.close()
-    return top_three_articles
+    print("\n Top Three Articles of All Time: ")
+    print("-" * 35)
+    for article in top_three_articles:
+        print(" {} - {} views".format(article[0], article[1]))
 
 
 def get_most_popular_authors():
@@ -36,7 +39,10 @@ def get_most_popular_authors():
     c.execute(query)
     most_popular_authors = c.fetchall()
     db.close()
-    return most_popular_authors
+    print("\n Most Popular Authors of All Time: ")
+    print("-" * 35)
+    for author in most_popular_authors :
+        print(" {} - {} views".format(author[0], author[1]))
 
 
 def get_over_one_percent_error():
@@ -53,4 +59,13 @@ def get_over_one_percent_error():
     c.execute(query)
     over_one_percent_error = c.fetchall()
     db.close()
-    return over_one_percent_error
+    print("\n Day(s) With Over 1% Errors: ")
+    print("-" * 35)
+    for error in over_one_percent_error :
+        print(" {} - {} errors".format(error[0], error[2]))
+
+
+if __name__ == '__main__':
+    get_top_three_articles()
+    get_most_popular_authors()
+    get_over_one_percent_error()
