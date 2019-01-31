@@ -6,24 +6,29 @@ This is a Log Analysis project for the Full Stack Web Development Nanodegree @Ud
 
 This project makes use of a linux-based virtual machine. To install it, go to Virtual Box's website: https://www.virtualbox.org/wiki/Downloads
 
-We use Vagrant to manage our virtual machine and sync our local repo with the machine's repo. Please install vagrant: https://www.vagrantup.com/downloads.html
+We use Vagrant to manage our virtual machine and sync our local repo with VM's repo. Please install vagrant: https://www.vagrantup.com/downloads.html
 
 Then, fork the following repo:
 https://github.com/udacity/fullstack-nanodegree-vm/tree/master/vagrant
 
-Finally, run `vagrant up` followed by `vagrant ssh`.
+Run `cd vagrant`. Then run `vagrant up` followed by `vagrant ssh`.
 
-Cd into vagrant (`cd /vagrant`). Then clone the current repo at https://github.com/dani-santos-code/log_analysis
+Run `cd /vagrant`. Then clone the current repo by running
+`git clone git@github.com:dani-santos-code/log_analysis.git`
 
+Run `pip install -r requirements.txt` to load necessary dependencies
 Finally, download the file newsdata.zip here: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
 
-Unzip it and move it to your root directory. Then
+Unzip it and move it to your root directory(`news`). Then
 load the data on `newsdata.sql` by running
 `psql -d news -f newsdata.sql`
 
-## Queries - DB API
+## Running Queries - DB API
 
-Queries can be found on `newsdb.py`
+Run `cd news`. Then run queries by typing `python newsdb.py`
+
+You should see something like this:
+
 
 ## Views
 This project uses the following views:
@@ -48,18 +53,14 @@ This project uses the following views:
   ORDER BY day;
 `
 
-## File Structure
+## Original File Structure
 ```bash
 .
+.
 ├── README.md
-├── news.py
 ├── newsdb.py
-├── requirements.txt
-├── static
-│   ├── github.png
-│   └── icon.svg
-└── templates
-    └── index.html
+├── newsdb.pyc
+└── requirements.txt
 ```
 ## Running the Project
 
