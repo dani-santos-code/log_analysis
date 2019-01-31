@@ -19,7 +19,7 @@ def get_top_three_articles():
     print("\n Top Three Articles of All Time: ")
     print("-" * 35)
     for article in top_three_articles:
-        print(" {} - {} views".format(article[0], article[1]))
+        print('"{}" - {} views'.format(article[0], article[1]))
 
 
 def get_most_popular_authors():

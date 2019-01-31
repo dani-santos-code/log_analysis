@@ -8,32 +8,26 @@ This is a Log Analysis project for the Full Stack Web Development Nanodegree @Ud
 
 2. We use Vagrant to manage our virtual machine and sync our local repo with VM's repo. Please install vagrant: https://www.vagrantup.com/downloads.html
 
-3. Run `vagrant up` followed by `vagrant ssh`.
-
-4. Run `cd /vagrant`. Then clone the current repo by running
+3. Clone the current repo by running
 `git clone git@github.com:dani-santos-code/log_analysis.git`
 
-5. Run `pip install -r requirements.txt` to load necessary dependencies.
+4. Run `vagrant up` followed by `vagrant ssh`.
+
+5. Run `cd /vagrant`.
+
+5. Run `pip install -r requirements.txt` to load necessary dependencies. *In case of errors, run `sudo pip install -r requirements.txt`*
 
 6. Finally, download the file `newsdata.zip` here: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
 
-7. Unzip it and move it to your root directory(`news`).
+7. Unzip it and move it to your root directory.
 
-8. On the root directory, load the data on `newsdata.sql` by running `psql -d news -f newsdata.sql`
+8. Load the data on `newsdata.sql` by running `psql -d news -f newsdata.sql`
 
-## Running Queries - DB API
+9. Run `psql news` to access the `news` database.
 
-Make sure you're on the root directory.
+## Creating Views
 
-* To run queries type `python newsdb.py`
-
-* You should see something like this:
-![image](https://drive.google.com/uc?export=view&id=17cPO-qDfgG6OdVoLBY7wa_ENoKPP_d9O)
-
-## Views
-This project uses the following views:
-
-**total_requests**:
+Now run the following to create 2 views ('total_requests' and 'error_requests'):
 
 ` CREATE VIEW total_requests as
   SELECT CAST(time as DATE) as day, count(status) as total_requests
@@ -43,8 +37,6 @@ This project uses the following views:
 `
 \
 \
-**error_requests**:
-
 ` CREATE VIEW error_requests as
   SELECT CAST(time as DATE) as day, count(status) as error_log
   FROM log
@@ -52,6 +44,16 @@ This project uses the following views:
   GROUP BY day
   ORDER BY day;
 `
+
+* After creating the views, don't forget to exit the `psql` console by running `\q`
+
+## Running the Script
+
+* To run queries, type `python newsdb.py`
+
+* You should see something like this:
+![image](https://drive.google.com/uc?export=view&id=17cPO-qDfgG6OdVoLBY7wa_ENoKPP_d9O)
+
 
 ## Original File Structure
 ```bash
@@ -69,5 +71,6 @@ This project uses the following views:
 ├── README.md
 ├── newsdb.py
 ├── newsdata.sql
+├── Vagrantfile
 └── requirements.txt
 ```
