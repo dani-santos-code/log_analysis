@@ -8,32 +8,27 @@ This is a Log Analysis project for the Full Stack Web Development Nanodegree @Ud
 
 2. We use Vagrant to manage our virtual machine and sync our local repo with VM's repo. Please install vagrant: https://www.vagrantup.com/downloads.html
 
-3. Then, fork the following repo:
-https://github.com/udacity/fullstack-nanodegree-vm
+3. Run `vagrant up` followed by `vagrant ssh`.
 
-4. Run `cd vagrant`. Then run `vagrant up` followed by `vagrant ssh`.
-
-5. Run `cd /vagrant`. Then clone the current repo by running
+4. Run `cd /vagrant`. Then clone the current repo by running
 `git clone git@github.com:dani-santos-code/log_analysis.git`
 
-6. Run `cd news`
+5. Run `pip install -r requirements.txt` to load necessary dependencies.
 
-7. Run `pip install -r requirements.txt` to load necessary dependencies.
+6. Finally, download the file `newsdata.zip` here: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
 
-8. Finally, download the file `newsdata.zip` here: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
+7. Unzip it and move it to your root directory(`news`).
 
-9. Unzip it and move it to your root directory(`news`).
-
-10. On the `news` directory, load the data on `newsdata.sql` by running `psql -d news -f newsdata.sql`
+8. On the root directory, load the data on `newsdata.sql` by running `psql -d news -f newsdata.sql`
 
 ## Running Queries - DB API
 
-Make sure you're on the `news` directory. If not, run `cd news`.
+Make sure you're on the root directory.
 
-* To run queries by typing `python newsdb.py`
+* To run queries type `python newsdb.py`
 
 * You should see something like this:
-
+![image](https://drive.google.com/uc?export=view&id=17cPO-qDfgG6OdVoLBY7wa_ENoKPP_d9O)
 
 ## Views
 This project uses the following views:
@@ -63,7 +58,8 @@ This project uses the following views:
 .
 ├── README.md
 ├── newsdb.py
-└── requirements.txt
+├── requirements.txt
+└── Vagrantfile
 ```
 
 ## After adding the .sql file:
