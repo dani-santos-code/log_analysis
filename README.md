@@ -10,8 +10,6 @@ Unzip it and move it to your root directory. Then
 load the data on `newsdata.sql` by running
 `psql -d news -f newsdata.sql`
 
-Unzip the file and place it in the directory
-
 ## Queries - DB API
 
 Queries can be found on `newsdb.py`
