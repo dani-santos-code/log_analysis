@@ -4,30 +4,35 @@ This is a Log Analysis project for the Full Stack Web Development Nanodegree @Ud
 
 ## Setting up your environment:
 
-This project makes use of a linux-based virtual machine. To install it, go to Virtual Box's website: https://www.virtualbox.org/wiki/Downloads
+1. This project makes use of a linux-based virtual machine. To install it, go to Virtual Box's website: https://www.virtualbox.org/wiki/Downloads
 
-We use Vagrant to manage our virtual machine and sync our local repo with VM's repo. Please install vagrant: https://www.vagrantup.com/downloads.html
+2. We use Vagrant to manage our virtual machine and sync our local repo with VM's repo. Please install vagrant: https://www.vagrantup.com/downloads.html
 
-Then, fork the following repo:
-https://github.com/udacity/fullstack-nanodegree-vm/tree/master/vagrant
+3. Then, fork the following repo:
+https://github.com/udacity/fullstack-nanodegree-vm
 
-Run `cd vagrant`. Then run `vagrant up` followed by `vagrant ssh`.
+4. Run `cd vagrant`. Then run `vagrant up` followed by `vagrant ssh`.
 
-Run `cd /vagrant`. Then clone the current repo by running
+5. Run `cd /vagrant`. Then clone the current repo by running
 `git clone git@github.com:dani-santos-code/log_analysis.git`
 
-Run `pip install -r requirements.txt` to load necessary dependencies
-Finally, download the file newsdata.zip here: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
+6. Run `cd news`
 
-Unzip it and move it to your root directory(`news`). Then
-load the data on `newsdata.sql` by running
-`psql -d news -f newsdata.sql`
+7. Run `pip install -r requirements.txt` to load necessary dependencies.
+
+8. Finally, download the file `newsdata.zip` here: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
+
+9. Unzip it and move it to your root directory(`news`).
+
+10. On the `news` directory, load the data on `newsdata.sql` by running `psql -d news -f newsdata.sql`
 
 ## Running Queries - DB API
 
-Run `cd news`. Then run queries by typing `python newsdb.py`
+Make sure you're on the `news` directory. If not, run `cd news`.
 
-You should see something like this:
+* To run queries by typing `python newsdb.py`
+
+* You should see something like this:
 
 
 ## Views
@@ -56,16 +61,17 @@ This project uses the following views:
 ## Original File Structure
 ```bash
 .
+├── README.md
+├── newsdb.py
+└── requirements.txt
+```
+
+## After adding the .sql file:
+
+```bash
 .
 ├── README.md
 ├── newsdb.py
-├── newsdb.pyc
+├── newsdata.sql
 └── requirements.txt
 ```
-## Running the Project
-
-Activate your virtual environment. Then to make sure you have all
-required dependencies installed, run `pip install -r requirements.txt`
-
-Once that is setup, on your console run `python news.py`. That will run the
-Log Analysis web page on your `localhost`on PORT `8000`.
