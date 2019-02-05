@@ -1,6 +1,7 @@
 # About the Project
 This is a Log Analysis project for the Full Stack Web Development Nanodegree @Udacity (https://eu.udacity.com/course/full-stack-web-developer-nanodegree--nd004)
 
+This is a pure Python project (no framework was used). By running the script you should be able to see some reports printed on the CLI, based on the data provided. Queries are done with raw SQL queries, using the *psycopg* library, which supports PostgreSQL. The project runs on a VM in combination with Vagrant. See instructions to get it running.
 
 ## Setting up your environment:
 
